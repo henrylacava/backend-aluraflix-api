@@ -11,9 +11,9 @@ class AuthController extends Controller
     public function register(Request $request)
     {
         $request->validate([
-            'name' => ['required', 'min:2', 'max:30'],
+            'name' => ['required', 'string', 'min:2', 'max:30'],
             'email' => ['required', 'unique:users,email', 'email:rfc,dns'],
-            'password' => ['required', 'confirmed']
+            'password' => ['required', 'string', 'confirmed']
         ]);
 
         $user = User::create([
@@ -37,7 +37,7 @@ class AuthController extends Controller
     {
         $request->validate([
             'email' => ['required', 'email:rfc,dns'],
-            'password' => ['required']
+            'password' => ['required', 'string']
         ]);
 
         // Check email

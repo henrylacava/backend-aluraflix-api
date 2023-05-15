@@ -22,8 +22,8 @@ class StoreVideosRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => ['required', 'min:2', 'max:30'],
-            'description' => ['required', 'min:2', 'max:160'],
+            'title' => ['required', 'string', 'min:2', 'max:30'],
+            'description' => ['required', 'string', 'min:2', 'max:160'],
             'url' => ['required', 'url']
         ];
     }

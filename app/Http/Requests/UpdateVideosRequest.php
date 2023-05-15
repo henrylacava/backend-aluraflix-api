@@ -22,8 +22,8 @@ class UpdateVideosRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => ['min:2', 'max:30'],
-            'description' => ['min:2', 'max:160'],
+            'title' => ['min:2', 'string', 'max:30'],
+            'description' => ['min:2', 'string', 'max:160'],
             'url' => ['url']
         ];
     }
